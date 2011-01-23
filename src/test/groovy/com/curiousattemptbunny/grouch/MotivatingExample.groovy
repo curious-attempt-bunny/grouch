@@ -4,3 +4,4 @@ couchdb = new Grouch('http://localhost')
 couchdb.mydb.delete()
 couchdb.mydb.create()
 couchdb.mydb << [_id: 'mydoc', aField: 'aValue' ]
+assert couchdb.mydb.mydoc.aField == 'aValue'
