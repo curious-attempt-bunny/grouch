@@ -1,11 +1,15 @@
 package com.curiousattemptbunny.grouch
 
+import groovyx.net.http.HTTPBuilder
+
 class Grouch {
-	private String couchDbUrl
-	private def databases = [:].withDefault { name -> new Database(name: name) }
+	private def databases
 	
 	def Grouch(String couchDbUrl) {
-		this.couchDbUrl = couchDbUrl
+		def httpBuilder = new HTTPBuilder(couchDbUrl)
+		databases = [:].withDefault {
+			name -> new Database(name: name, httpBuilder: httpBuilder)
+		}
 	}
 	
 	def propertyMissing(String name) {
