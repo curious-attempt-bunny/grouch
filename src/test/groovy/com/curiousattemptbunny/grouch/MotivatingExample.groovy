@@ -14,13 +14,14 @@ class MotivatingExample extends Specification {
 	def setup() {
 		couchdb = new Grouch('http://127.0.0.1:5984/')
 		
-		couchdb."grouch-test-db".create()
-		
 		testDb = couchdb."grouch-test-db"
-	}
-	
-	def cleanup() {
-		couchdb."grouch-test-db".delete()
+		
+		// easier to debug than if we do this in cleanup
+		if (testDb.exists()) {
+			testDb.delete()
+		}
+		
+		couchdb."grouch-test-db".create()
 	}
 	
 	def "we can add and read a new document"() {
@@ -35,5 +36,13 @@ class MotivatingExample extends Specification {
 		expect:
 		testDb.exists()
 		!couchdb.nonExistantDb.exists()
+	}
+	
+	def "we don't need to specify a document id to add it"() {
+		given:
+		def response = testDb << [aField: 'aValue']
+		
+		expect:
+		testDb[response.id].aField == 'aValue'
 	}
 }

@@ -7,6 +7,9 @@ class Grouch {
 	
 	def Grouch(String couchDbUrl) {
 		def httpBuilder = new HTTPBuilder(couchDbUrl)
+//		httpBuilder.handler.failure = { resp ->
+//		    "Unexpected failure: ${resp.statusLine}"
+//		}
 		databases = [:].withDefault {
 			name -> new Database(name: name, httpBuilder: httpBuilder)
 		}
