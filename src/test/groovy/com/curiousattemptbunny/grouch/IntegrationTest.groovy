@@ -4,9 +4,18 @@ import groovyx.net.http.HTTPBuilder
 import spock.lang.*
 import static groovyx.net.http.Method.*
 
-class MotivatingExample extends Specification {
+
+/**
+ * This integration test requires that you have couchdb deployed and available via http://127.0.0.1:5984
+ * 
+ * @author Merlyn Albery-Speyer
+ */
+class IntegrationTest extends Specification {
 	
 	// TODO non-standard paths (e.g. http://localhost/couchdb/ )
+	// TODO _changes (with since support)
+	// TODO document gets with parameters
+	// TODO view support
 	
 	def couchdb
 	def testDb
