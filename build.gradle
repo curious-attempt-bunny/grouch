@@ -18,6 +18,14 @@ dependencies {
 	testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
 }
 
+sourceSets {
+	example {
+		groovy {
+			srcDir = 'src/example/groovy'
+		}
+	}
+}
+
 task pom << {
     pom {
         project {
