@@ -1,5 +1,10 @@
 apply plugin: 'groovy'
 apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+group = 'com.curiousattemptbunny'
+artifact = 'grouch'
+version = '0.1'
 
 repositories {
 	mavenCentral()
@@ -11,4 +16,23 @@ dependencies {
 	compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.5.1'
 	
 	testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
+}
+
+task pom << {
+    pom {
+        project {
+            inceptionYear '2011'
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+        }
+    }.writeTo("$buildDir/libs/${artifact}-${version}.pom")
+}
+
+task prepare(dependsOn: ['test', 'pom', 'jar']) {
+
 }
