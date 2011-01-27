@@ -4,7 +4,7 @@ Use Grouch if you want a concise API for interacting with CouchDb from the JVM.
 
 ## Example Usage
 
-Once you have Grouch and it's dependencies on the path* it's as simple as this to use:
+Once you have Grouch and it's dependencies on the path it's as simple as this to use:
 
 [Example.groovy](curious-attempt-bunny/grouch/blob/master/src/example/groovy/Example.groovy)
     import com.curiousattemptbunny.grouch.*
@@ -15,7 +15,7 @@ Once you have Grouch and it's dependencies on the path* it's as simple as this t
     grouch.mydb << [_id: 'mydoc', aField: 'aValue' ]
     assert grouch.mydb.mydoc.aField == 'aValue'
 
-* A public maven repository is a TODO item. For now you can build both yourself using gradle - see [build.gradle](https://github.com/curious-attempt-bunny/grouch/blob/master/build.gradle).
+Note: a public maven repository is a TODO item. For now you can build both yourself using gradle - see [build.gradle](https://github.com/curious-attempt-bunny/grouch/blob/master/build.gradle).
 
 ## Further Development
 
