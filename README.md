@@ -4,7 +4,7 @@ Use Grouch if you want a concise API for interacting with CouchDb from the JVM.
 
 ## Example Usage
 
-Once you have Grouch and it's dependencies on the path (WIP - see the build.gradle) it's as simple as this to use:
+Once you have Grouch and it's dependencies on the path (WIP - see [build.gradle](https://github.com/curious-attempt-bunny/grouch/blob/master/build.gradle) for now) it's as simple as this to use:
 
 [Example.groovy](curious-attempt-bunny/grouch/blob/master/src/example/groovy/Example.groovy)
     import com.curiousattemptbunny.grouch.*
