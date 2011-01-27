@@ -6,13 +6,14 @@ Use Grouch if you want a concise API for interacting with CouchDb from the JVM.
 
 Once you have Grouch and it's dependencies on the path (WIP - see the build.gradle) it's as simple as this to use:
 
-    $ import com.curiousattemptbunny.grouch.*
-    $ 
-    $ grouch = new Grouch('http://localhost:5984')
-    $ if (grouch.mydb.exists()) grouch.mydb.delete()
-    $ grouch.mydb.create()
-    $ grouch.mydb << [_id: 'mydoc', aField: 'aValue' ]
-    $ assert grouch.mydb.mydoc.aField == 'aValue'
+[Example.groovy](curious-attempt-bunny/grouch/blob/master/src/example/groovy/Example.groovy)
+    import com.curiousattemptbunny.grouch.*
+    
+    grouch = new Grouch('http://localhost:5984')
+    if (grouch.mydb.exists()) grouch.mydb.delete()
+    grouch.mydb.create()
+    grouch.mydb << [_id: 'mydoc', aField: 'aValue' ]
+    assert grouch.mydb.mydoc.aField == 'aValue'
 
 ## Further Development
 
