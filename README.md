@@ -15,7 +15,7 @@ Once you have Grouch and it's dependencies on the path it's as simple as this to
     grouch.mydb << [_id: 'mydoc', aField: 'aValue' ]
     assert grouch.mydb.mydoc.aField == 'aValue'
 
-Note: a public maven repository is a TODO item. For now you can build both yourself using gradle - see [build.gradle](https://github.com/curious-attempt-bunny/grouch/blob/master/build.gradle).
+Note: a public maven repository is a TODO item. For now you can build both the jar and pom yourself using gradle - see [build.gradle](https://github.com/curious-attempt-bunny/grouch/blob/master/build.gradle).
 
 ## Further Development
 
